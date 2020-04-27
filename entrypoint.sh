@@ -34,7 +34,8 @@ if [[ -z $DOCKERFILE_PATH ]]; then
   FILE_PATH='.'
 fi
 
-
+echo "The following image is going to be pushed to registry"
+echo $IMAGE
 
 docker build -t $IMAGE $DOCKERFILE_PATH
 docker login --username "$USERNAME" --password "$PASSWORD" $REGISTRY
@@ -44,7 +45,7 @@ if [[ "$CREATE_BACKUP" == 'True' ]]; then
   TAG=$GITHUB_RUN_NUMBER
   BAK_IMAGE=$REPOSITORY:$TAG
   if [ -n "$REGISTRY" ]; then
-    IMAGE=$REGISTRY/$IMAGE
+    IMAGE=$REGISTRY/$IMAGE:$TAG
   fi
   echo 'Backup image name is:'$IMAGE
 fi
