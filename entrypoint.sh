@@ -1,5 +1,8 @@
 #!/bin/sh -l
 
+pwd
+ls
+
 if [ -z $USERNAME ]; then
   echo 'Required username parameter'
   exit 1
