@@ -49,5 +49,5 @@ if [[ "$CREATE_BACKUP" == 'True' ]]; then
   fi
   echo 'Backup image name is:'$BAK_IMAGE
 fi
-
+docker tag $IMAGE $BAK_IMAGE
 docker push $BAK_IMAGE
