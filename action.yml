@@ -1,4 +1,7 @@
 # action.yml
+name: 'PM Docker Builder'
+description: 'PM Docker Builder'
+author: 'Aram Kocharyan '
 name: 'PM Shopware5 deployer'
 description: 'Build new image with your shopware5 source and pushg to docker registry'
 runs:
