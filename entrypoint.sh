@@ -1,8 +1,5 @@
 #!/bin/sh -l
 
-pwd
-ls
-
 if [ -z $USERNAME ]; then
   echo 'Required username parameter'
   exit 1
@@ -48,9 +45,9 @@ if [[ "$CREATE_BACKUP" == 'True' ]]; then
   TAG=$GITHUB_RUN_NUMBER
   BAK_IMAGE=$REPOSITORY:$TAG
   if [ -n "$REGISTRY" ]; then
-    IMAGE=$REGISTRY/$IMAGE:$TAG
+    BAK_IMAGE=$REGISTRY/$BAK_IMAGE
   fi
-  echo 'Backup image name is:'$IMAGE
+  echo 'Backup image name is:'$BAK_IMAGE
 fi
 
 docker push $BAK_IMAGE
