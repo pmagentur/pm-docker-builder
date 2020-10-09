@@ -30,8 +30,8 @@ if [ -n "$REGISTRY" ]; then
 fi
 
 if [[ -z $DOCKERFILE_PATH ]]; then
-  echo 'Setting Defaukt path of Docker File to .'
-  FILE_PATH='.'
+  echo 'Setting Default path of Docker File to .'
+  DOCKERFILE_PATH='.'
 fi
 
 echo "The following image is going to be pushed to registry"
