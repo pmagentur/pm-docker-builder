@@ -48,6 +48,7 @@ if [[ "$CREATE_BACKUP" == 'True' ]]; then
     BAK_IMAGE=$REGISTRY/$BAK_IMAGE
   fi
   echo 'Backup image name is:'$BAK_IMAGE
+  docker tag $IMAGE $BAK_IMAGE
+  docker push $BAK_IMAGE
 fi
-docker tag $IMAGE $BAK_IMAGE
-docker push $BAK_IMAGE
+
