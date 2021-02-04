@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM docker:stable
 
 LABEL "com.github.actions.icon"="bell"
 LABEL "com.github.actions.color"="blue"
