@@ -36,12 +36,12 @@ fi
 
 if [[ -z $CONTEXT_PATH ]]; then
   CONTEXT_PATH=$DOCKERFILE_PATH
-  echo 'Set default value to context path to ' + $DOCKERFILE_PATH
+  echo 'Set default value for context path to ' + $DOCKERFILE_PATH
 fi
 
 if [[ -z $DOCKERFILE ]]; then
   DOCKERFILE=$CONTEXT_PATH + '/Dockerfile'
-  echo 'Set default value for Dockerfile' + $DOCKERFILE
+  echo 'Set default value for Dockerfile ' + $DOCKERFILE
 fi
 
 echo "The following image is going to be pushed to registry"
