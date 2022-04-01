@@ -34,10 +34,20 @@ if [[ -z $DOCKERFILE_PATH ]]; then
   DOCKERFILE_PATH='.'
 fi
 
+if [[ -z $CONTEXT_PATH ]]; then
+  CONTEXT_PATH=$DOCKERFILE_PATH
+  echo 'Set default value for context path to ' + $DOCKERFILE_PATH
+fi
+
+if [[ -z $DOCKERFILE ]]; then
+  DOCKERFILE=$CONTEXT_PATH + '/Dockerfile'
+  echo 'Set default value for Dockerfile ' + $DOCKERFILE
+fi
+
 echo "The following image is going to be pushed to registry"
 echo $IMAGE
 
-docker build -t $IMAGE $DOCKERFILE_PATH
+docker build -t $IMAGE -f $DOCKERFILE $CONTEXT
 docker login --username "$USERNAME" --password "$PASSWORD" $REGISTRY
 docker push $IMAGE
 
