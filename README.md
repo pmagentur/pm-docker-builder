@@ -42,8 +42,10 @@ PASSWORD  | GitHub Repository name                      | Docker registry passwo
 REGISTRY | `hub.docker.com`                                               | Docker registry url (public or private)
 REPOSITORY     | GitHub Repo name excluding owner name , If `octocat/Hello-World`, then REPOSITORY=`Hello-World` | Docker repository name (IMAGE = (REGISTRY/REPOSITORY:TAG))
 TAG    | `latest`                                         | Docker image's tag
-DOCKERFILE_PATH  | `.`                    | The location of Dockerfile
+DOCKERFILE_PATH  | `.`                    | The location of Dockerfile `(Deprecated: Use CONTEXT_PATH instead)`
 CREATE_BACKUP    | `False`                                              | If it is set to `True`, Action Creates doublicated docker image using build number as a tag and puses to docker registry
+CONTEXT_PATH     | `$DOCKERFILE_PATH` | Sets the build context directory
+DOCKERFILE       | `$CONTEXT_PATH + '/Dockerfile'` | Defines the dockerfile which will be used for the build
 
 You can see the action block with all variables as below:
 
@@ -61,4 +63,4 @@ You can see the action block with all variables as below:
 
 ## License
 
-[MIT](LICENSE) © 2019 PM Agenture
+[MIT](LICENSE) © 2019 PM Agentur
