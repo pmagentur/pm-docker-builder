@@ -47,6 +47,7 @@ fi
 echo "The following image is going to be pushed to registry"
 echo $IMAGE
 
+echo "docker build -t " + $IMAGE + " -f " + $DOCKERFILE + " " + $CONTEXT
 docker build -t $IMAGE -f $DOCKERFILE $CONTEXT
 docker login --username "$USERNAME" --password "$PASSWORD" $REGISTRY
 docker push $IMAGE
