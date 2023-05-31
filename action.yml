@@ -4,7 +4,7 @@ description: 'Build and push docker images easly'
 author: 'Aram Kocharyan '
 runs:
   using: 'docker'
-  image: 'docker://pmaram/pm_docker_builder:latest'
+  image: 'docker://vrtanesyan/pm_docker_builder:latest'
 branding:
   icon: 'aperture'
   color: 'blue'
