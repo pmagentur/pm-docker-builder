@@ -1,5 +1,5 @@
 #!/bin/sh -l
-env 
+
 if [[ -z $USERNAME ]]; then
   echo 'Required username parameter'
   exit 1
